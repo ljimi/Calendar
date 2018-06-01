@@ -11,35 +11,6 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
-//屏幕
-#define SCREENWIDTH [UIScreen mainScreen].bounds.size.width
-#define SCREENHEIGHT [UIScreen mainScreen].bounds.size.height
-#define NAVBAR_HEIGHT 64
-#define TABBAR_HEIGHT 49
-#define CELLW SCREENWIDTH/7
-#define CELLH (SCREENWIDTH/7 - AdapterX(20))
-
-
-
-//字体
-#define AdapterFontSize(a) [Adapter setFontSize:a]
-
-//适配
-#define AdapterFrame(x,y,w,h)  [Adapter setFrame:CGRectMake(x,y,w,h)]
-#define AdapterSize(w,h)  [Adapter setSize:CGSizeMake(w,h)]
-#define AdapterX(x)  [Adapter setFloatX:x]
-#define AdapterY(y)  [Adapter setFloatY:y]
-
-#import "RLTool.h"
-#import "Adapter.h"
-#import "GlobalVariable.h"
-#import "UIView+Extension.h"
-#import "UILabel+Extension.h"
-#import "Masonry.h"
-//rgb颜色
-#define ZCColor(r,g,b,al) [UIColor colorWithRed:(r/255.0) green:(g/255.0) blue:(b/255.0) alpha:al]
-//随机色
-#define ZCRandomColor ZCColor((arc4random_uniform(255)),(arc4random_uniform(255)),(arc4random_uniform(255)),1)
-
+#import "Header.h"
 
 #endif /* PrefixHeader_pch */
