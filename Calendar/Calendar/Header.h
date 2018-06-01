@@ -13,6 +13,8 @@
 #import <UIKit/UIKit.h>
 
 
+#define weakArray @[@"日",@"一",@"二",@"三",@"四",@"五",@"六"]
+
 #define CELLW SCREENWIDTH/7
 #define CELLH (SCREENWIDTH/7 - AdapterX(20))
 

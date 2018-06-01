@@ -26,9 +26,9 @@
 
 -(Calendar *)calendar{
     if (!_calendar) {
-        _calendar = [[Calendar alloc] init];
+        _calendar = [Calendar new];
         _calendar.layout.itemSize = CGSizeMake(CELLW, CELLH);
-        _calendar.collection = [[CalendarView alloc] initWithFrame: CGRectMake(0, 100, SCREENWIDTH, CELLH * _calendar.collection.collectionRows + AdapterY(30)) collectionViewLayout:_calendar.layout];
+        _calendar.collection = [[CalendarView alloc] initWithFrame: CGRectMake(0, 100, SCREENWIDTH, 0) collectionViewLayout:_calendar.layout];
         _calendar.collection.dataSource = self.calendar;//-------
         _calendar.collection.delegate = self.calendar;//-------
         [_calendar.collection setting];//设置

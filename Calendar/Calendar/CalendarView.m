@@ -9,18 +9,17 @@
 #import "CalendarView.h"
 #import "CurrentMonthTitleReusableView.h"
 #import "CurrentMonthCell.h"
+
 @interface CalendarView ()
 @end
 
 @implementation CalendarView
-
 
 -(instancetype)init{
     if (self = [super init]) {
     }
     return self;
 }
-
 
 -(void)setting{
     
@@ -59,7 +58,7 @@
         self.collectionRows = 6;
     }
     //星期行数据
-    [self.monthArray addObjectsFromArray:self.weakArray];
+    [self.monthArray addObjectsFromArray:weakArray];
     //空白
     for (int i = 0; i < startEmpty; i ++) {
         [self.monthArray addObject:@""];
@@ -72,6 +71,7 @@
     for (int i = 0; i <= trueEndEmpty; i ++) {
         [self.monthArray addObject:@""];
     }
+    
     self.height = CELLH * self.collectionRows + AdapterY(30);
     [self reloadData];
 }
@@ -98,13 +98,6 @@
 
 -(void)setCollectionRows:(NSInteger)collectionRows{
     _collectionRows = collectionRows;
-}
-
--(NSArray *)weakArray{
-    if (!_weakArray) {
-        _weakArray = @[@"日",@"一",@"二",@"三",@"四",@"五",@"六"];
-    }
-    return _weakArray;
 }
 
 -(NSMutableArray *)monthArray{

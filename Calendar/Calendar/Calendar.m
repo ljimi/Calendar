@@ -11,10 +11,6 @@
 #import "CurrentMonthCell.h"
 #import "YMonthViewController.h"
 
-@interface Calendar ()
-
-@end
-
 @implementation Calendar
 
 -(instancetype)init{
@@ -22,7 +18,6 @@
     }
     return self;
 }
-
 
 -(void)updata{
     //刷新数据
@@ -62,7 +57,7 @@
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CurrentMonthCell *cell = [CurrentMonthCell cellWithCollectionView:collectionView Identifier:[NSString stringWithFormat:@"CookingEquipmentCellId%ld",indexPath.row] cellForItemAtIndexPath:indexPath];
+    CurrentMonthCell *cell = [CurrentMonthCell cellWithCollectionView:collectionView Identifier:[NSString stringWithFormat:@"CookingEquipmentCellId%ld",(long)indexPath.row] cellForItemAtIndexPath:indexPath];
     cell.isCurrentYear = _collection.isCurrentYear;
     cell.isCurrentMonth = _collection.isCurrentMonth;
     cell.monthCount = _collection.monthCount;

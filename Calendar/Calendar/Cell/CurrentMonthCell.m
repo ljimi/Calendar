@@ -35,7 +35,10 @@
 
 -(void)setTitle:(NSString *)title{
     _title = title;
+    
     [_cellBtn setTitle:_title forState:UIControlStateNormal];
+    
+//    (_title.length == 0)?(_cellBtn.hidden = YES):[_cellBtn setTitle:_title forState:UIControlStateNormal];
     
     NSString *todayStr = [RLTool getToday];
     
@@ -60,6 +63,7 @@
     
     _cellBtn.backgroundColor = self.normalColor;
     
+    
     //当前月份日期外区域不可点击
     if (_row <= 6 + _fristDayInMonthIsWeak - 1 || _row >= _monthCount + 6 + _fristDayInMonthIsWeak) {
         _cellBtn.enabled = NO;
@@ -76,11 +80,6 @@
 }
 
 
--(void)setUp{
-    self.contentView.backgroundColor = [UIColor whiteColor];
-    [self.contentView addSubview:self.cellBtn];
-}
-
 -(void)notifica:(NSNotification *)notification{
     _cellBtn.enabled = YES;
     _cellBtn.selected = NO;
@@ -90,7 +89,6 @@
 -(void)dealloc{
     [ZCNotificationCenter removeObserver:self];
 }
-
 
 -(void)click:(UIButton *)sender{
     sender.selected = !sender.selected;
@@ -104,6 +102,11 @@
 }
 
 #pragma marn initUI
+
+-(void)setUp{
+    self.contentView.backgroundColor = [UIColor whiteColor];
+    [self.contentView addSubview:self.cellBtn];
+}
 
 -(UIButton *)cellBtn{
     if (!_cellBtn) {

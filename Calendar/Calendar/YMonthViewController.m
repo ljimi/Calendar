@@ -22,7 +22,6 @@
     [self.navigationController  setNavigationBarHidden:NO animated:YES];
 }
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"日历";
@@ -30,7 +29,6 @@
     [self.view addSubview:self.collection];
     
     [self setOffset];
- 
 }
 
 -(void)setOffset{
@@ -63,12 +61,8 @@
 
 -(void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath{
     YMonthCell *rcell = (YMonthCell *)cell;
-    //如果日期是当月
-    NSString *strYear = [self.YMonthArray[indexPath.section] substringToIndex:4];
-    NSString *strMonth = [NSString stringWithFormat:@"%ld",(long)indexPath.row + 1];
-    rcell.titleLab.text = [NSString stringWithFormat:@"%ld月",(long)indexPath.row + 1];
-    rcell.titleLab.textColor = ([RLTool isCurrentYear:strYear] && [RLTool isCurrentMonth:strMonth])?ZCColor(139, 195, 74, 1): ZCColor(29, 137, 207, 1);
-    rcell.date = [RLTool strToDateWothStrYear:strYear strMonth:strMonth];
+    rcell.strYear = [self.YMonthArray[indexPath.section] substringToIndex:4];
+    rcell.indexPath = indexPath;
 }
 
 // 如果不写这个方法 加载view时也不会走设置头部的方法
