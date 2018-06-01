@@ -20,5 +20,8 @@
 @property(nonatomic, assign) NSInteger monthCount;//当前月份的天数
 @property(nonatomic, assign) BOOL isCurrentYear;//当前年份是否是今年
 @property(nonatomic, assign) BOOL isCurrentMonth;//当前月份是否是本月，配合isCurrentYear使用
+
+@property(nonatomic, strong) UIColor *normalColor;
+
 +(instancetype)cellWithCollectionView:(UICollectionView *)collectionView Identifier:(NSString *)index cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 @end

@@ -39,22 +39,26 @@
     
     NSString *todayStr = [RLTool getToday];
     
+    self.normalColor = [UIColor whiteColor];
+    
     //如果日期是今天
     if (_isCurrentYear == YES && _isCurrentMonth == YES && [_title isEqualToString:todayStr]) {
-        _cellBtn.backgroundColor = todayColor;
+        self.normalColor = todayColor;
     }
     
     //如果日期过期事务
     if (_isCurrentYear == YES && _isCurrentMonth == YES && [_title isEqualToString:@"12"] && 12 <
         [todayStr intValue]) {
-        _cellBtn.backgroundColor = guoqidayColor;
+        self.normalColor = guoqidayColor;
     }
     
     //如果日期待办事务
     if (_isCurrentYear == YES && _isCurrentMonth == YES && [_title isEqualToString:@"30"] && 30 >
         [todayStr intValue]) {
-        _cellBtn.backgroundColor = daibandayColor;
+        self.normalColor = daibandayColor;
     }
+    
+    _cellBtn.backgroundColor = self.normalColor;
     
     //当前月份日期外区域不可点击
     if (_row <= 6 + _fristDayInMonthIsWeak - 1 || _row >= _monthCount + 6 + _fristDayInMonthIsWeak) {
@@ -69,13 +73,10 @@
     if (_row % 7 == 0 || (_row + 1) % 7 == 0) {
         [_cellBtn setTitleColor:shuangxiudayColor forState:UIControlStateNormal];
     }
-    
 }
 
 
 -(void)setUp{
-//    self.contentView.layer.borderWidth = 0.27;
-//    self.contentView.layer.borderColor = [UIColor grayColor].CGColor;
     self.contentView.backgroundColor = [UIColor whiteColor];
     [self.contentView addSubview:self.cellBtn];
 }
@@ -92,14 +93,13 @@
 
 
 -(void)click:(UIButton *)sender{
-    
     sender.selected = !sender.selected;
     if (sender.selected == YES && sender.backgroundColor != [UIColor redColor]) {
         sender.titleLabel.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0];
         sender.backgroundColor = [UIColor blueColor];
     }else if(sender.selected == NO && sender.backgroundColor != [UIColor redColor]){
         sender.titleLabel.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0];
-        sender.backgroundColor = ([sender.titleLabel.text isEqualToString:[RLTool getToday]])?todayColor:[UIColor whiteColor];
+        sender.backgroundColor = self.normalColor;
     }
 }
 
@@ -135,4 +135,10 @@
 -(void)setFristDayInMonthIsWeak:(int)fristDayInMonthIsWeak{
     _fristDayInMonthIsWeak = fristDayInMonthIsWeak;
 }
+
+-(void)setNormalColor:(UIColor *)normalColor{
+    _normalColor = normalColor;
+}
+
+
 @end

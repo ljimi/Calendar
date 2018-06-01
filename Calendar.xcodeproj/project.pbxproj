@@ -228,7 +228,7 @@
 				TargetAttributes = {
 					045FB4B11F3AB45A000C0B73 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = EK7U2Y8V27;
+						DevelopmentTeam = GJHN7W98VH;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -449,11 +449,12 @@
 			baseConfigurationReference = 788EE7A3EBEF4A1BEE9FBFA5 /* Pods-Calendar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = EK7U2Y8V27;
+				DEVELOPMENT_TEAM = GJHN7W98VH;
 				GCC_PREFIX_HEADER = Calendar/PrefixHeader.pch;
 				INFOPLIST_FILE = Calendar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ZhiChuangProject2017;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.manhui.GuangCaiHui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -463,11 +464,12 @@
 			baseConfigurationReference = 8F47AA19E3CD8FA0F7B01A04 /* Pods-Calendar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = EK7U2Y8V27;
+				DEVELOPMENT_TEAM = GJHN7W98VH;
 				GCC_PREFIX_HEADER = Calendar/PrefixHeader.pch;
 				INFOPLIST_FILE = Calendar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ZhiChuangProject2017;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.manhui.GuangCaiHui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
