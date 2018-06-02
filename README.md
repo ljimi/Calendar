@@ -77,3 +77,4 @@
 ![image](/sources/Simulator%20Screen%20Shot%20-%20iPhone%20X%20-%202018-06-02%20at%2009.39.41.png)
 ![image](/sources/Simulator%20Screen%20Shot%20-%20iPhone%20X%20-%202018-06-02%20at%2009.39.45.png)
 
+<img src="/sources/Simulator%20Screen%20Shot%20-%20iPhone%20X%20-%202018-06-02%20at%2009.39.45.png" width="50%" height="50%" />
