@@ -27,7 +27,6 @@
     self.bounces = NO;
     self.showsVerticalScrollIndicator = NO;
     
-    
     //默认本月为当前月份
     _isCurrentYear = YES;
     _isCurrentMonth = YES;
@@ -48,13 +47,13 @@
     
     NSInteger startEmpty = self.fristDayInMonthIsWeak - 1;
     NSInteger supposeEndEmpty = 48 - self.monthCount - 6 - self.fristDayInMonthIsWeak;
-    NSInteger trueEndEmpty;
+//    NSInteger trueEndEmpty;
     
     if (supposeEndEmpty < 6 && supposeEndEmpty >= 0) {
-        trueEndEmpty = supposeEndEmpty;
+//        trueEndEmpty = supposeEndEmpty;
         self.collectionRows = 7;
     }else{
-        trueEndEmpty = 41 - self.monthCount - 6 - self.fristDayInMonthIsWeak;
+//        trueEndEmpty = 41 - self.monthCount - 6 - self.fristDayInMonthIsWeak;
         self.collectionRows = 6;
     }
     //星期行数据
@@ -68,9 +67,9 @@
         [self.monthArray addObject:((i <= 9))?[NSString stringWithFormat:@"0%d",i]:[NSString stringWithFormat:@"%d",i]];
     }
     //空白
-    for (int i = 0; i <= trueEndEmpty; i ++) {
-        [self.monthArray addObject:@""];
-    }
+//    for (int i = 0; i <= trueEndEmpty; i ++) {
+//        [self.monthArray addObject:@""];
+//    }
     
     self.height = CELLH * self.collectionRows + AdapterY(30);
     [self reloadData];
