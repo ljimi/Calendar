@@ -23,3 +23,51 @@
 
 ### 三，集成简单。
 * 看demo，只需一步。
+ <br>
+<div>
+@interface ViewController ()
+  <br>
+@property(nonatomic, strong) Calendar *calendar;
+  <br>
+@end
+  <br>
+@implementation ViewController
+  <br>
+- (void)viewDidLoad {
+  <br>
+    [super viewDidLoad];
+  <br>
+    [self.view addSubview:self.calendar.collection];
+  <br>
+}
+  <br>
+
+
+-(Calendar *)calendar{
+ <br>
+    if (!_calendar) {
+     <br>
+        _calendar = [Calendar new];
+         <br>
+        _calendar.layout.itemSize = CGSizeMake(CELLW, CELLH);
+         <br>
+        _calendar.collection = [[CalendarView alloc] initWithFrame: CGRectMake(0, 100, SCREENWIDTH, 0) collectionViewLayout:_calendar.layout];
+         <br>
+        _calendar.collection.dataSource = self.calendar;//-------
+         <br>
+        _calendar.collection.delegate = self.calendar;//-------
+         <br>
+        [_calendar.collection setting];//设置
+         <br>
+        [_calendar.collection setMonthDate];//加载数据
+         <br>
+    }
+     <br>
+    return _calendar;
+     <br>
+}
+ <br>
+
+@end
+ <br>
+</div>
