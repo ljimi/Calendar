@@ -72,6 +72,6 @@
  <br>
 </div>
 
-![image](https://github.com/ljimi/Calendar/raw/master/sources/Simulator%20Screen%20Shot%20-%20iPhone%20X%20-%202018-06-02%20at%2009.39.41.png)
+![image](/sources/Simulator%20Screen%20Shot%20-%20iPhone%20X%20-%202018-06-02%20at%2009.39.41.png)
 
 
