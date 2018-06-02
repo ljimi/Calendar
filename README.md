@@ -25,19 +25,21 @@
 * 看demo，只需一步。
 <div>
 @interface ViewController ()
-/n
+ <br>
 @property(nonatomic, strong) Calendar *calendar;
  <br>
 @end
-
+ <br>
 @implementation ViewController
-
+ <br>
 - (void)viewDidLoad {
+ <br>
     [super viewDidLoad];
-    
+ <br>
     [self.view addSubview:self.calendar.collection];
+ <br>
 }
-
+ <br>
 
 
 -(Calendar *)calendar{
