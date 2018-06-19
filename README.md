@@ -61,6 +61,10 @@
          <br>
         [_calendar.collection setMonthDate];//加载数据
          <br>
+         _calendar.backDataBlock = ^(NSString *data) {
+         <br>
+         };
+         <br>
     }
      <br>
     return _calendar;
