@@ -87,6 +87,7 @@
     NSString *strYear = [self.YMonthArray[indexPath.section] substringToIndex:4];
     self.yyddBlock(strYear,strMonth);
     [self.navigationController popViewControllerAnimated:YES];
+
 }
 //设置每组的cell的边界
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {

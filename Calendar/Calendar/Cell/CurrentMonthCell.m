@@ -95,9 +95,11 @@
     if (sender.selected == YES && sender.backgroundColor != [UIColor redColor]) {
         sender.titleLabel.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0];
         sender.backgroundColor = [UIColor blueColor];
+        self.isSelectedBlock(YES);
     }else if(sender.selected == NO && sender.backgroundColor != [UIColor redColor]){
         sender.titleLabel.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0];
         sender.backgroundColor = self.normalColor;
+        self.isSelectedBlock(NO);
     }
 }
 

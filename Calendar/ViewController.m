@@ -32,6 +32,9 @@
         _calendar.collection.dataSource = self.calendar;//-------
         _calendar.collection.delegate = self.calendar;//-------
         [_calendar.collection setting];//设置
+        _calendar.backDataBlock = ^(NSString *data) {
+            
+        };
         [_calendar.collection setMonthDate];//加载数据
     }
     return _calendar;

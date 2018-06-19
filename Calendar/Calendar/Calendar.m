@@ -29,20 +29,23 @@
     
     YMonthViewController *yMonth = [YMonthViewController new];
     yMonth.insetYear = [[self.collection.currentDate substringToIndex:4] stringByAppendingString:@"年"];
+    
+    WeakSelf
     yMonth.yyddBlock = ^(NSString *year, NSString *month) {
         
         //获取返回日期信息
         NSDate *date = [RLTool strToDateWothStrYear:year strMonth:month];
-        _collection.currentDate = [NSString stringWithFormat:@"%@年%@月",year,month];
-        _collection.isCurrentYear = [RLTool isCurrentYear:year];
-        _collection.isCurrentMonth = [RLTool isCurrentMonth:month];
-        _collection.monthCount = [RLTool getNumberOfDaysInMonth:date];
-        _collection.fristDayInMonthIsWeak = [[RLTool getweekDayWithDate:date] intValue];
+        
+        weakSelf.collection.currentDate = [NSString stringWithFormat:@"%@年%@月",year,month];
+        weakSelf.collection.isCurrentYear = [RLTool isCurrentYear:year];
+        weakSelf.collection.isCurrentMonth = [RLTool isCurrentMonth:month];
+        weakSelf.collection.monthCount = [RLTool getNumberOfDaysInMonth:date];
+        weakSelf.collection.fristDayInMonthIsWeak = [[RLTool getweekDayWithDate:date] intValue];
         
         //发出通知给CurrentMonthCell改变设置
         [ZCNotificationCenter postNotificationName:RLReturnRefreshRCNotification object:nil];
         
-        [self updata];
+        [weakSelf updata];
     };
     
     [[self getCurrentVC].navigationController pushViewController:yMonth animated:YES];
@@ -64,6 +67,13 @@
     cell.fristDayInMonthIsWeak = _collection.fristDayInMonthIsWeak;
     cell.row = indexPath.row;
     cell.title = _collection.monthArray[indexPath.row];
+    WeakSelf
+    cell.isSelectedBlock = ^(BOOL isSelected) {
+        if (isSelected) {
+       NSString *data =[NSString stringWithFormat:@"%@%@日",weakSelf.collection.currentDate,_collection.monthArray[indexPath.row]];
+       weakSelf.backDataBlock(data);
+        }
+    };
     return cell;
 }
 
@@ -103,7 +113,6 @@
     }
     return _layout;
 }
-
 
 
 @end

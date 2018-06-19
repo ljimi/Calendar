@@ -6,8 +6,9 @@
 //  Copyright © 2017年 MXL. All rights reserved.
 //
 
-
 #import <UIKit/UIKit.h>
+
+typedef void(^isSelectedBlock)(BOOL isSelected);
 
 @interface CurrentMonthCell : UICollectionViewCell
 
@@ -22,6 +23,8 @@
 @property(nonatomic, assign) BOOL isCurrentMonth;//当前月份是否是本月，配合isCurrentYear使用
 
 @property(nonatomic, strong) UIColor *normalColor;
+
+@property(nonatomic, copy) isSelectedBlock isSelectedBlock;
 
 +(instancetype)cellWithCollectionView:(UICollectionView *)collectionView Identifier:(NSString *)index cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 @end

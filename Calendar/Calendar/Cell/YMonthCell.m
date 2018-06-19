@@ -73,8 +73,6 @@
 }
 
 
-
-
 #pragma mark initUI
 
 -(void)setUp{
