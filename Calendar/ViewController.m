@@ -20,6 +20,7 @@
     [super viewDidLoad];
     
     [self.view addSubview:self.calendar.collection];
+    
 }
 
 
@@ -32,12 +33,14 @@
         _calendar.collection.dataSource = self.calendar;//-------
         _calendar.collection.delegate = self.calendar;//-------
         [_calendar.collection setting];//设置
-        _calendar.backDataBlock = ^(NSString *data) {
-            
+        WeakSelf
+        _calendar.backDataBlock = ^(NSString *date) {
+            weakSelf.title = date;
         };
         [_calendar.collection setMonthDate];//加载数据
     }
     return _calendar;
 }
+
 
 @end
