@@ -72,6 +72,8 @@
         if (isSelected) {
        NSString *data =[NSString stringWithFormat:@"%@%@日",weakSelf.collection.currentDate,_collection.monthArray[indexPath.row]];
        weakSelf.backDataBlock(data);
+        }else{
+       weakSelf.backDataBlock(@"");
         }
     };
     return cell;
