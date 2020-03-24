@@ -22,7 +22,6 @@
 }
 
 -(void)setting{
-    
     self.backgroundColor = [UIColor whiteColor];
     self.bounces = NO;
     self.showsVerticalScrollIndicator = NO;
@@ -34,7 +33,7 @@
     _monthCount = [RLTool getNumberOfDaysInMonth:[NSDate date]];//获得当月的天数
     _fristDayInMonthIsWeak = [[RLTool getweekDayWithDate:[NSDate date]] intValue];//获得当月第一天是周几
     for (NSInteger i = 0; i < 50 ; i++) {
-        [self registerClass:[CurrentMonthCell class] forCellWithReuseIdentifier:[NSString stringWithFormat:@"CookingEquipmentCellId%ld",i]];
+        [self registerClass:[CurrentMonthCell class] forCellWithReuseIdentifier:[NSString stringWithFormat:@"CookingEquipmentCellId%ld",(long)i]];
     }
     
     [self registerClass:[CurrentMonthTitleReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([CurrentMonthTitleReusableView class])];

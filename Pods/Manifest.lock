@@ -1,12 +1,32 @@
 PODS:
+  - DKNightVersion (2.4.3):
+    - DKNightVersion/Core (= 2.4.3)
+    - DKNightVersion/CoreAnimation (= 2.4.3)
+    - DKNightVersion/UIKit (= 2.4.3)
+  - DKNightVersion/Core (2.4.3):
+    - DKNightVersion/Core/DeallocBlockExecutor (= 2.4.3)
+    - DKNightVersion/Core/extobjc (= 2.4.3)
+  - DKNightVersion/Core/DeallocBlockExecutor (2.4.3)
+  - DKNightVersion/Core/extobjc (2.4.3)
+  - DKNightVersion/CoreAnimation (2.4.3):
+    - DKNightVersion/Core
+  - DKNightVersion/UIKit (2.4.3):
+    - DKNightVersion/Core
   - Masonry (1.0.2)
 
 DEPENDENCIES:
+  - DKNightVersion (~> 2.4.3)
   - Masonry (~> 1.0.2)
 
+SPEC REPOS:
+  trunk:
+    - DKNightVersion
+    - Masonry
+
 SPEC CHECKSUMS:
+  DKNightVersion: eaa80cc4014b4bae7d4b535fd87ecc6a3c2767b3
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
 
-PODFILE CHECKSUM: fcd862912334038bd93ae480b83d43d11798d2d6
+PODFILE CHECKSUM: af1ac1716a1b97bbda23051615a12517c666bffc
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.9.0.beta.2
