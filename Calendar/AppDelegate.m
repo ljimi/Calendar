@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "RootViewController.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,9 +21,9 @@
        // Override point for customization after application launch.
        self.window.backgroundColor = [UIColor whiteColor];
        [self.window makeKeyAndVisible];
-       UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:[[RootViewController alloc] init]];
+       UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]];
        self.window.rootViewController = navigation;
-       UISearchBar *searchBar = [[UISearchBar alloc] init];
+//       UISearchBar *searchBar = [[UISearchBar alloc] init];
     
     return YES;
 }

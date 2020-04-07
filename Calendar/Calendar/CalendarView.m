@@ -22,6 +22,7 @@
 }
 
 -(void)setting{
+    
     self.backgroundColor = [UIColor whiteColor];
     self.bounces = NO;
     self.showsVerticalScrollIndicator = NO;

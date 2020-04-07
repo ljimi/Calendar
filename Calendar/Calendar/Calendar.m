@@ -60,6 +60,7 @@
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
     CurrentMonthCell *cell = [CurrentMonthCell cellWithCollectionView:collectionView Identifier:[NSString stringWithFormat:@"CookingEquipmentCellId%ld",(long)indexPath.row] cellForItemAtIndexPath:indexPath];
     cell.isCurrentYear = _collection.isCurrentYear;
     cell.isCurrentMonth = _collection.isCurrentMonth;

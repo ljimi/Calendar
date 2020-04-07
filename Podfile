@@ -6,10 +6,7 @@ target 'Calendar' do
   # use_frameworks!
 
 
-pod 'DKNightVersion', '~> 2.4.3'
-
-
-pod 'Masonry', '~> 1.0.2'
+#pod 'Masonry', '~> 1.0.2'
 
   # Pods for Calendar
 
