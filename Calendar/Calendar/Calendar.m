@@ -11,6 +11,10 @@
 #import "CurrentMonthCell.h"
 #import "YMonthViewController.h"
 
+@interface Calendar ()<UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+
+@end
+
 @implementation Calendar
 
 -(instancetype)init{
@@ -30,7 +34,7 @@
     YMonthViewController *yMonth = [YMonthViewController new];
     yMonth.insetYear = [[self.collection.currentDate substringToIndex:4] stringByAppendingString:@"年"];
     
-    WeakSelf
+    __weak typeof(self) weakSelf = self;
     yMonth.yyddBlock = ^(NSString *year, NSString *month) {
         
         //获取返回日期信息
@@ -62,13 +66,14 @@
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     CurrentMonthCell *cell = [CurrentMonthCell cellWithCollectionView:collectionView Identifier:[NSString stringWithFormat:@"CookingEquipmentCellId%ld",(long)indexPath.row] cellForItemAtIndexPath:indexPath];
-    cell.isCurrentYear = _collection.isCurrentYear;
-    cell.isCurrentMonth = _collection.isCurrentMonth;
+    cell.isCurrentYear = _collection.isCurrentYear;//年份
+    cell.isCurrentMonth = _collection.isCurrentMonth;//月份
     cell.monthCount = _collection.monthCount;
     cell.fristDayInMonthIsWeak = _collection.fristDayInMonthIsWeak;
     cell.row = indexPath.row;
     cell.title = _collection.monthArray[indexPath.row];
-    WeakSelf
+    
+    __weak typeof(self) weakSelf = self;
     cell.isSelectedBlock = ^(BOOL isSelected) {
         if (isSelected) {
        NSString *data =[NSString stringWithFormat:@"%@%@日",weakSelf.collection.currentDate,_collection.monthArray[indexPath.row]];

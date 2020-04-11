@@ -9,12 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface YMonthCell : UICollectionViewCell
-
-@property(nonatomic, strong) NSMutableArray *monthArray;
-
-@property(nonatomic, strong) UILabel *titleLab;
-@property(nonatomic, strong) UIView *view;
-
 @property(nonatomic, copy) NSString *strYear;
 @property(nonatomic, strong) NSIndexPath *indexPath;
 

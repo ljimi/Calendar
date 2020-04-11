@@ -33,7 +33,8 @@
         _calendar.collection.dataSource = self.calendar;//-------
         _calendar.collection.delegate = self.calendar;//-------
         [_calendar.collection setting];//设置
-        WeakSelf
+        
+        __weak typeof(self) weakSelf = self;
         _calendar.backDataBlock = ^(NSString *date) {
             weakSelf.title = date;
         };

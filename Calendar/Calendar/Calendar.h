@@ -9,9 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "CalendarView.h"
 
-typedef void(^dataBlock)(NSString *date);
-@interface Calendar : NSObject<UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface Calendar : NSObject
 @property(nonatomic, strong) CalendarView *collection;
 @property(nonatomic, strong) UICollectionViewFlowLayout *layout;
-@property(nonatomic, copy) dataBlock backDataBlock;
+@property(nonatomic, copy) void(^backDataBlock)(NSString *date);
 @end

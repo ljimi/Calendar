@@ -21,6 +21,7 @@
     return self;
 }
 
+
 -(void)setting{
     
     self.backgroundColor = [UIColor whiteColor];

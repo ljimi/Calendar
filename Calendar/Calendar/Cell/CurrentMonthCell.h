@@ -8,12 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^isSelectedBlock)(BOOL isSelected);
-
 @interface CurrentMonthCell : UICollectionViewCell
 
-@property(strong, nonatomic) UIButton *cellBtn;
-@property(strong, nonatomic) UIView *border;
 @property(copy, nonatomic) NSString *title;
 @property(assign, nonatomic) NSInteger row;
 
@@ -22,9 +18,7 @@ typedef void(^isSelectedBlock)(BOOL isSelected);
 @property(nonatomic, assign) BOOL isCurrentYear;//当前年份是否是今年
 @property(nonatomic, assign) BOOL isCurrentMonth;//当前月份是否是本月，配合isCurrentYear使用
 
-@property(nonatomic, strong) UIColor *normalColor;
-
-@property(nonatomic, copy) isSelectedBlock isSelectedBlock;
+@property(nonatomic, copy) void(^isSelectedBlock)(BOOL isSelected);
 
 +(instancetype)cellWithCollectionView:(UICollectionView *)collectionView Identifier:(NSString *)index cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 @end

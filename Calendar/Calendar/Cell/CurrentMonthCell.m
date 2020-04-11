@@ -14,6 +14,13 @@
 #define shuangxiudayColor ZCColor(29, 137, 207, 1)//周六周日的文字颜色
 #define normaldayColor ZCColor(42, 50, 69, 1)//默认1-5文字颜色
 
+@interface CurrentMonthCell()
+@property(strong, nonatomic) UIButton *cellBtn;
+@property(strong, nonatomic) UIView *border;
+@property(nonatomic, strong) UIColor *normalColor;
+
+@end
+
 @implementation CurrentMonthCell
 
 +(instancetype)cellWithCollectionView:(UICollectionView *)collectionView Identifier:(NSString *)index cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -38,8 +45,7 @@
     
     [_cellBtn setTitle:_title forState:UIControlStateNormal];
     
-//    (_title.length == 0)?(_cellBtn.hidden = YES):[_cellBtn setTitle:_title forState:UIControlStateNormal];
-    
+
     NSString *todayStr = [RLTool getToday];
     
     self.normalColor = [UIColor whiteColor];

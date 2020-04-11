@@ -12,7 +12,7 @@
 
 #import <UIKit/UIKit.h>
 
-#define WeakSelf __weak typeof(self) weakSelf = self;
+//#define WeakSelf __weak typeof(self) weakSelf = self;
 
 #define weakArray @[@"日",@"一",@"二",@"三",@"四",@"五",@"六"]
 

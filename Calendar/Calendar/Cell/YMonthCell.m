@@ -8,6 +8,15 @@
 
 #import "YMonthCell.h"
 
+static const NSInteger weekSize = 7;
+
+@interface YMonthCell ()
+@property(nonatomic, strong) UIView *view;
+@property(nonatomic, strong) UILabel *titleLab;
+@property(nonatomic, strong) NSMutableArray *monthArray;
+@end
+
+
 @implementation YMonthCell
 
 +(instancetype)cellWithCollectionView:(UICollectionView *)collectionView Identifier:(NSString *)index cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -59,13 +68,13 @@
     }
     
     
-    CGFloat labCW = (self.contentView.width - AdapterX(6))/7;
-    CGFloat labCH = (self.contentView.width - AdapterX(6))/7;
+    CGFloat labCW = (self.contentView.width - AdapterX(6))/weekSize;
+    CGFloat labCH = (self.contentView.width - AdapterX(6))/weekSize;
     
     for (int i = 0 ; i < _monthArray.count ; i ++) {
         if (i >= fristDayInMonthIsWeak && i < _monthArray.count) {
-            CGFloat labX = (labCW + AdapterX(1)) * (i % 7);
-            CGFloat LabY = (labCH + AdapterY(1)) * (i / 7);
+            CGFloat labX = (labCW + AdapterX(1)) * (i % weekSize);
+            CGFloat LabY = (labCH + AdapterY(1)) * (i / weekSize);
             [self addDayLabWithFrame:CGRectMake(labX, LabY, labCW, labCH) index:i];
         }
     }
@@ -91,10 +100,10 @@
 -(void)getWeekLabs{
     
     CGFloat labY = CGRectGetMaxY(_titleLab.frame) + AdapterY(5);
-    CGFloat labW = self.contentView.width/7;
+    CGFloat labW = self.contentView.width/weekSize;
     CGFloat labH = AdapterY(10);
     
-    for (int i = 0 ; i < 7 ; i ++) {
+    for (int i = 0 ; i < weekSize ; i ++) {
         [self addWeekLabWithFrame:CGRectMake(labW * i, labY, labW, labH) index:i];
     }
 }
